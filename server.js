@@ -18,6 +18,31 @@ app.get('/searches/new',(request,respons) => {
   respons.render('./pages/searches/new')
 })
 
+app.post('/searches',(request,response)=>{
+  const inputt = request.body.search;
+  const radio = request.body.radio;
+  let url;
+  if(radio === 'title'){
+    url = `https://www.googleapis.com/books/v1/volumes?q=${inputt}`;
+  }else if(radio === 'author') {
+    url = `https://www.googleapis.com/books/v1/volumes?q=${inputt}`;
+  }
+  console.log(request.body);
+  superagent.get(url)
+    .then(bookData =>{
+      let dataArray = bookData.body.items.map(value =>{
+        return new Book(value);
+      })
+      response.render('./pages/searches/show',{data:dataArray});
+    })
+})
+function Book (value){
+  this.image = value.volumeInfo.imageLinks.smallThumbnail;
+  this.title = value.volumeInfo.title;
+  this.author= value.volumeInfo.authors[0];
+  this.description = value.volumeInfo.description;
+}
+
 // app.get('/',(req,res)=>{
 //   res.render('index');
 //   // res.status(200).send('okkkkkkkkk');

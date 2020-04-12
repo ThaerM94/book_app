@@ -3,24 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>New</title>
 </head>
 <body>
+    <header>
+        <h1> Search by Title or Author </h1>
+    </header>
     <main>
-        <header>
-        <h2>
-            Search by Title or Auther
-        </h2>
-        </header>
-        <form action="">
-            <input type="text" placeholder="Enter a title or auther">
-            <label for="">Title</label>
-            <input type="radio" name="Title" >
-            <label for="">Auther</label>
-            <input type="radio" name="auther" >
-            <button>Search the Google Books API</button>
-        </form>
+        <form action="/searches" method="post">
+        <input type="text" placeholder="Enter a Title or Author" name="search"><br>
+        <label>Title
+        <input type="radio" name="radio" value="title">
+        </label><br>
+        <label>Author
+        <input type="radio" name="radio" value="author">
+        </label><br>
+        <button>Search for Google Books API </button>
+      </form>
     </main>
-    
 </body>
 </html>
