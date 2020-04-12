@@ -1,3 +1,7 @@
-body {
-    background-color: rgb(147, 114, 179);
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+@media (min-width: 375px) {
+body{
+    background-color: darkgray;
+    font-family:'PT Sans', sans-serif;
+}
 }

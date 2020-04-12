@@ -4,8 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New</title>
+    <link rel="stylesheet" href="../style/reset.css">
+    <link rel="stylesheet" href="../style/base.css">
+    <link rel="stylesheet" href="../style/modules.css">
+    <link rel="stylesheet" href="../style/layout.css">
+    <link rel="stylesheet" href="../style/icons.css">
 </head>
 <body>
+    <!-- Top Navigation Menu -->
+    <div class="topnav">
+      <h2>Best Book!</h2>
+      <div id="myLinks">
+        <a href="../index">Home</a>
+        <a href="new">Search for google books API</a>
+      </div>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
     <header>
         <h1> Search by Title or Author </h1>
     </header>
@@ -13,7 +29,7 @@
         <form action="/searches" method="post">
         <input type="text" placeholder="Enter a Title or Author" name="search"><br>
         <label>Title
-        <input type="radio" name="radio" value="title">
+        <input type="radio" id="first-radio" name="radio" value="title">
         </label><br>
         <label>Author
         <input type="radio" name="radio" value="author">
@@ -21,5 +37,15 @@
         <button>Search for Google Books API </button>
       </form>
     </main>
+    <script>
+        function myFunction() {
+          var x = document.getElementById("myLinks");
+          if (x.style.display === "block") {
+            x.style.display = "none";
+          } else {
+            x.style.display = "block";
+          }
+        }
+        </script>
 </body>
 </html>

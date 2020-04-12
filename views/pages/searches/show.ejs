@@ -4,14 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Show</title>
+    <link rel="stylesheet" href="../style/reset.css">
+    <link rel="stylesheet" href="../style/base.css">
+    <link rel="stylesheet" href="../style/modules.css">
+    <link rel="stylesheet" href="../style/layout.css">
+    <link rel="stylesheet" href="../style/icons.css">
+
 </head>
 <body>
+    <!-- Top Navigation Menu -->
+    <div class="topnav">
+        <h2>Best Book!</h2>
+        <div id="myLinks">
+          <a href="../index">Home</a>
+          <a href="../searches/new">Search for google books API</a>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
     <header><h1>Search Result</h1></header>
-    <main>
+    <main  id="showMain" >
         <% data.forEach(val => { %>      
-        <div>
+        <div class="container" >
             <img src="<%= val.image %>">
-            <h2><%= val.title%></h2>
+            <h3><%= val.title%></h3>
             <h4><%= val.author %></h4>
             <p><%= val.description%></p>
         </div>
@@ -19,5 +36,17 @@
     </main>
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
   crossorigin="anonymous"></script>
+
+  <script>
+    function myFunction() {
+      var x = document.getElementById("myLinks");
+      if (x.style.display === "block") {
+        x.style.display = "none";
+      } else {
+        x.style.display = "block";
+      }
+    }
+    </script>
+
 </body>
 </html>
