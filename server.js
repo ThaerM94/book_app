@@ -35,6 +35,9 @@ app.post('/searches',(request,response)=>{
       })
       response.render('./pages/searches/show',{data:dataArray});
     })
+    .catch((error) => {
+      errorHandler(error, request, response);
+    });
 })
 function Book (value){
   this.image = value.volumeInfo.imageLinks.smallThumbnail;
@@ -61,6 +64,11 @@ function Book (value){
 app.get('*',(req,res)=>{
   res.status(404).send('This route does not exist!!');
 })
+
+function errorHandler (err,req,res){
+  res.status(505).send(err);
+}
+
 app.listen(PORT,()=>{
   console.log(`Listening on PORT ${PORT}`)
 })
