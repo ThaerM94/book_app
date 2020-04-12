@@ -10,9 +10,14 @@ app.use(express.urlencoded({extended:true}));
 app.set('view engine', 'ejs');
 
 
-app.get('/hello',(request,respons) => {
+app.get('/index',(request,respons) => {
     respons.render('./pages/index')
 })
+
+app.get('/' , (req,res)=>{
+  res.render('./pages/index');
+})
+
 
 app.get('/searches/new',(request,respons) => {
   respons.render('./pages/searches/new')
@@ -21,13 +26,9 @@ app.get('/searches/new',(request,respons) => {
 app.post('/searches',(request,response)=>{
   const inputt = request.body.search;
   const radio = request.body.radio;
-  let url;
-  if(radio === 'title'){
-    url = `https://www.googleapis.com/books/v1/volumes?q=${inputt}`;
-  }else if(radio === 'author') {
-    url = `https://www.googleapis.com/books/v1/volumes?q=${inputt}`;
-  }
-  console.log(request.body);
+  let url = `https://www.googleapis.com/books/v1/volumes?q=${inputt}+in${radio}:${inputt}`;
+
+  // console.log(request.body);
   superagent.get(url)
     .then(bookData =>{
       let dataArray = bookData.body.items.map(value =>{
@@ -40,27 +41,17 @@ app.post('/searches',(request,response)=>{
     });
 })
 function Book (value){
-  this.image = value.volumeInfo.imageLinks.smallThumbnail;
+  if(value.volumeInfo.imageLinks.smallThumbnail === null) {
+    this.image = 'https://www.freeiconspng.com/uploads/book-icon--icon-search-engine-6.png';
+  } else {
+    this.image = value.volumeInfo.imageLinks.smallThumbnail;
+  }
   this.title = value.volumeInfo.title;
   this.author= value.volumeInfo.authors[0];
   this.description = value.volumeInfo.description;
 }
 
-// app.get('/',(req,res)=>{
-//   res.render('index');
-//   // res.status(200).send('okkkkkkkkk');
-// })
-// app.get('/books',(req,res)=>{
-//   // get books from google book api
-//   // .then
-//   // send the result data to render them by res.render
-//   let url =`https://www.googleapis.com/books/v1/volumes?q=cats`;
-//   superagent.get(url)
-//     .then(data => {
-//       // res.json(data.body);
-//       res.render('booksPage',{book:data.body.items})
-//     })
-// })
+
 app.get('*',(req,res)=>{
   res.status(404).send('This route does not exist!!');
 })
