@@ -1,4 +1,4 @@
-@media (min-width: 375px) {
+@media (min-width: 320px) {
     form {
         display: grid;
         width: 73vw;
@@ -21,4 +21,4 @@
     input[type="radio"]  {
         margin-left: 13%;
     }
-}
+    }

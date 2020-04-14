@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include ('../../layout/head') %>
+</head>
+<body>
+    <!-- Top Navigation Menu -->
+    <%- include ('../../layout/header') %>
+    <header>
+      <h1>Details</h1>
+    </header>
+    <main id="indexMain">
+        <div class="container">
+        <%- include ('./detail') %>
+        <button class="two-button"> Update Details </button>
+        <button class="two-button"> Delete </button>
+    </div>
+    </main>
+    <script>
+        function myFunction() {
+          var x = document.getElementById("myLinks");
+          if (x.style.display === "block") {
+            x.style.display = "none";
+          } else {
+            x.style.display = "block";
+          }
+        }
+        </script>
+</body>
+</html>
