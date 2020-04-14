@@ -102,6 +102,12 @@
             color: white;
             font-size: 14px;
         }
+        form {
+            display: grid;
+            width: 53vw;
+            margin-top: 34px;
+            margin-left: 18%;
+        }
         form input {
             padding: 11px;
             margin: 10px;
@@ -116,16 +122,6 @@
             margin-top: 70px;
             min-height: 350px;
         }
-        button.two-button {
-            margin-left: 93px;
-            padding: 7px;
-            margin-bottom: 11px;
-            width: 32.93265vw;
-            margin-top: 6px;
-            background-color: #7e979b;
-            color: white;
-            letter-spacing: 1px;
-        }
         .container {
             padding-top: 30px;
             background-color: #d4d4d4ad;
@@ -136,13 +132,12 @@
             width: 83%;
             margin: 0 auto;
             /* text-align: -webkit-center; */
-        
         }
         button.two-button {
-            margin-left: 250px;
+            margin-left: 340px;
             padding: 10px;
             margin-bottom: 11px;
-            width: 32.93265vw;
+            width: 28.93265vw;
             margin-top: 25px;
             background-color: #7e979b;
             color: white;
