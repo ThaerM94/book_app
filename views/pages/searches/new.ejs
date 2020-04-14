@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <%- include ('../../layout/head') %>
+  <link rel="stylesheet" href="../style/modules/new-mod.css">
 </head>
 <body>
 <!-- Top Navigation Menu -->
@@ -13,7 +14,7 @@
         <form action="/searches" method="post">
         <input type="text" placeholder="Enter a Title or Author" name="search" required><br>
         <label>Title
-        <input type="radio" name="radio" value="title" required>
+        <input type="radio" name="radio" class="first-radio" value="title" required>
         </label><br>
         <label>Author
         <input type="radio" name="radio" value="author" required>

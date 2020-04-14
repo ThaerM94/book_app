@@ -1,3 +1,4 @@
+/* the new form */
 @media (min-width: 320px) {
     form#book-form {
         width: 14.86090775988287vw;
@@ -11,7 +12,7 @@
         margin-bottom: 30px;
         margin-top: 20px;
         min-height: 80vh;
-        box-shadow: 7px 7px 5px #56848C;
+        box-shadow: 7px 7px 5px #56848c;
         width: 148%;
         margin-left: -43px;
     }
@@ -19,8 +20,8 @@
         /* padding-top: 4px; */
         padding: 6px;
         margin-top: 12px;
-        /* background-color: #7B9599; */
-        background-color: #7E979B;
+        /* background-color: #7b9599; */
+        background-color: #7e979b;
         color: white;
         font-size: 14px;
     }
@@ -43,12 +44,12 @@
         margin-bottom: 11px;
         width: 32.93265vw;
         margin-top: 6px;
-        background-color: #7E979B;
+        background-color: #7e979b;
         color: white;
         letter-spacing: 1px;
     }
     button#details-button {
-        background-color: #7E979B;
+        background-color: #7e979b;
         color: white;
         padding: 5px;
         width: 38.93265vw;
@@ -80,10 +81,11 @@
         position: fixed;
         bottom: 0;
         right: 15px;
-        /* border: 3px solid #F1F1F1; */
+        /* border: 3px solid #f1f1f1; */
         z-index: 9;
         /* top: 0; */
     }
+      
       /* Add styles to the form container */
       .form-container {
         max-width: 300px;
@@ -92,11 +94,11 @@
       }
       /* Full-width input fields */
       .form-container input[type=text], .form-container input[type=password] {
-        width: 74%;
+        width: 83%;
         padding: 15px;
         margin: 5px 0 22px 0;
         border: none;
-        background: #F1F1F1;
+        background: #f1f1f1;
       }
       /* When the inputs get focus, do something */
       .form-container input[type=text]:focus, .form-container input[type=password]:focus {
@@ -122,6 +124,12 @@
       .form-container .btn:hover, .open-button:hover {
         opacity: 1;
       }
+      form#book-form {
+        width: 49.860908vw;
+        padding-bottom: 10px;
+        /* margin-bottom: 15px; */
+        padding: -39px;
+    }
     }
       @media (min-width:425px){
         button.two-button {
@@ -130,27 +138,20 @@
             /* margin-bottom: 19px; */
             width: 32.93265vw;
             margin-top: 21px;
-            background-color: #7E979B;
+            background-color: #7e979b;
             color: white;
             letter-spacing: 1px;
         }
         button#details-button {
-            background-color: #7E979B;
+            background-color: #7e979b;
             width: 16vw;
-        }
-        form#book-form {
-            width: 47.860908vw;
-            padding-bottom: 23px;
-            margin-right: 105px;
-            /* margin-bottom: 15px; */
-            padding: -39px;
         }
         button#my-button {
             /* padding-top: 4px; */
             padding: 6px;
             margin-top: 12px;
-            /* background-color: #7B9599; */
-            background-color: #7E979B;
+            /* background-color: #7b9599; */
+            background-color: #7e979b;
             color: white;
             font-size: 14px;
         }
@@ -173,7 +174,7 @@
             margin-bottom: 11px;
             width: 32.93265vw;
             margin-top: 6px;
-            background-color: #7E979B;
+            background-color: #7e979b;
             color: white;
             letter-spacing: 1px;
         }
@@ -183,13 +184,14 @@
             margin-bottom: 30px;
             margin-top: 20px;
             min-height: 80vh;
-            box-shadow: 7px 7px 5px #56848C;
+            box-shadow: 7px 7px 5px #56848c;
             width: 83%;
             margin: 0 auto;
             /* text-align: -webkit-center; */
+        
         }
         button#details-button {
-            background-color: #7E979B;
+            background-color: #7e979b;
             color: white;
             padding: 5px;
             width: 38.93265vw;
@@ -205,6 +207,8 @@
             /* padding-bottom: 141px; */
             margin-right: 430px;
             /* margin-bottom: 15px; */
+            margin-bottom: 15px;
+            margin-left: 130px;
             padding: -39px;
         }
         .form-container input[type=text], .form-container input[type=password] {
@@ -212,6 +216,6 @@
             padding: 20px;
             margin: 5px 0 22px 0;
             border: none;
-            background: #F1F1F1;
+            background: #f1f1f1;
         }
       }
