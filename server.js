@@ -13,15 +13,18 @@ const client = new pg.Client(process.env.DATABASE_URL);
 const methodOverRide = require('method-override') //////////
 app.use(methodOverRide('_method'))
 ////////////////
+
+
 app.put('/update/:update_book', newUpdate);
 function newUpdate (req , res){
   //collect
-  let { author, title, isbn, image_url, description ,bookShelf} = req.body;
+  let { author, title, isbn, image_url, description ,bookshelf} = req.body;
   //update
+  console.log(req.body.bookshelf);
   let SQL = 'UPDATE books set author=$1,title=$2,isbn=$3,image_url=$4,description=$5,bookshelf=$6 WHERE id=$7 ;';
   //safevalues
   let idParam = req.params.update_book;
-  let safeValues = [author,title,isbn,image_url, description,bookShelf,idParam];
+  let safeValues = [author,title,isbn,image_url, description,bookshelf,idParam];
   client.query(SQL,safeValues)
     .then(()=>{
       res.redirect(`/books/${idParam}`);
